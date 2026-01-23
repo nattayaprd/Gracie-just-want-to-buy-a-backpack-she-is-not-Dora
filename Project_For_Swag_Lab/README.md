@@ -11,6 +11,6 @@
     ❥ Visual Studio Code
 
 ## 🗒️ Notes from me
-    > I had a lot of fun to do this!<br>
-Wishing you guys have a good day 💖<br>
-Made by Nattaya 🍀💚✨
+    I had a lot of fun to do this!
+    Wishing you guys have a good day 💖
+    Made by Nattaya 🍀💚✨
