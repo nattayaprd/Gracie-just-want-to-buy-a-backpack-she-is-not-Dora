@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    String
 
 *** Variables ***
 # --- Configuration ---
@@ -7,12 +8,14 @@ ${URL}    https://www.saucedemo.com/
 ${browser}    chrome
 
 # --- Test Data ---
-${username}    problem_user
+${username}    standard_user
 ${password}    secret_sauce
 ${firstname}    Gracie
 ${lastname}    Abrams
 ${postalcode}    20160
-${total_price}    5    
+${backpack_price}    29.99
+${backpack_tax_for_check}    2.40
+${backpack_price_with_tax}    32.39    
 
 
 # --- Locators ---
@@ -27,16 +30,17 @@ ${header_your_information_page}        //span[contains(text(), 'Checkout: Your I
 ${firstname_field}    id=first-name
 ${lastname_field}        id=last-name      
 ${postalcode_field}        id=postal-code   
-${continue_button}        id=continue             
+${continue_button}        id=continue  
+${lct_fulltext_backpack_price}    //div[@class='inventory_item_price'] 
+${lct_total_price_checkout}    //div[@class='summary_total_label'] 
+${finish_button}    id=finish 
+${thank_you_header}        //h2[@class='complete-header']
+${back_home_button}        id=back-to-products      
 
 
 *** Keywords ***
 Open Browser and Go to Secretsauce
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-    Call Method    ${chrome_options}    add_argument    --incognito
-    Call Method    ${chrome_options}    add_argument    --disable-autofill-client-side
-    Call Method    ${chrome_options}    add_argument    --disable-save-password-bubble
-    Open browser        ${URL}      ${browser}      options=${chrome_options}
+    Open browser        ${URL}      ${browser}    options=add_argument("--incognito")
     Wait Until Element Is Visible       ${username_field}  
 
 Input Username and Password
@@ -63,36 +67,40 @@ Click "Check Out" button to go to "Your Information" Page
     Wait Until Element Is Visible        ${header_your_information_page}
 
 Input Your Information
-    Sleep    5s
-    Execute Javascript    document.getElementById('first-name').value='${firstname}';document.getElementById('first-name').dispatchEvent(new Event('input',{bubbles: true}));
-    Sleep    5s
-    Execute Javascript    document.getElementById('last-name').value='${lastname}';document.getElementById('last-name').dispatchEvent(new Event('input',{bubbles: true}));
-    Sleep    5s
-    Execute Javascript    document.getElementById('postal-code').value='${postalcode}';document.getElementById('postal-code').dispatchEvent(new Event('input',{bubbles: true}));
-    Sleep    10s
+    Wait Until Element Is Visible        ${firstname_field}    10s
+    Click Element        ${firstname_field}  
+    Input Text        ${firstname_field}        ${firstname}
+    Sleep    1s
 
-# Input Your Information
-#     Wait Until Element Is Visible        ${firstname_field}    10s
-#     Click Element        ${firstname_field}
-#     Clear Element Text     ${firstname_field}    
-#     Input Text        ${firstname_field}        ${firstname}
-#     Sleep    2s
+    Wait Until Element Is Visible        ${lastname_field}    10s
+    Click Element        ${lastname_field}
+    Input Text        ${lastname_field}        ${lastname}
+    Sleep    1s
 
-#     Wait Until Element Is Visible        ${lastname_field}    10s
-#     Click Element        ${lastname_field}
-#     Clear Element Text    ${lastname_field}
-#     Input Text        ${lastname_field}        ${lastname}
-#     Sleep    2s
-
-#     Wait Until Element Is Visible        ${postalcode_field}    10s
-#     Click Element        ${postalcode_field}
-#     Clear Element Text    ${postalcode_field}
-#     Input Text        ${postalcode_field}        ${postalcode}
-#     Sleep    2s
+    Wait Until Element Is Visible        ${postalcode_field}    10s
+    Click Element        ${postalcode_field}
+    Input Text        ${postalcode_field}        ${postalcode}
+    Sleep    1s
 
 Click on 'Continue' button
     Click Element    ${continue_button}      
     
+Verify price of a backpack, tax and total price
+    ${fulltext_backpack_price}=    Get Text    ${lct_fulltext_backpack_price}
+    ${backpack_price_only}=    Remove String     ${fulltext_backpack_price}    $ 
+    ${tax}=    Evaluate    float(${backpack_price_only}) * 0.08
+    Should Be Equal As Numbers    ${backpack_tax_for_check}    ${tax}    precision=2  
+    Should Be Equal As Numbers    ${backpack_price_only}    ${backpack_price}
+    ${total_price_checkout}=    Get Text    ${lct_total_price_checkout}
+    ${total_price_checkout_wo_string}=    Remove String    ${total_price_checkout}    Total:    $          
+    Should Be Equal As Numbers   ${backpack_price_with_tax}    ${total_price_checkout_wo_string}  
+
+Click on 'Finish' button
+    Click Element    ${finish_button}   
+
+Verify that User lands to page Checkout
+    Wait Until Element Is Visible    ${thank_you_header} 
+    Page Should Contain Button        ${back_home_button} 
 
 *** Test Cases ***
 TC-01 Verify that User can Login Successfully with Username and Password which is contained in the system
@@ -112,3 +120,11 @@ TC-03 Verify that User can go to Your Information Page after Clicking "Checkout"
 TC-04 Verify that User can Input an information in each field and can Click 'Continue'
     Input Your Information
     Click on 'Continue' button
+
+TC05- Verify that system display total price correctly
+    Verify price of a backpack, tax and total price
+
+TC06- Verify that User make an order succesfully
+    Click on 'Finish' button
+    Verify that User lands to page Checkout  
+    
