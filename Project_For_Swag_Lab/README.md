@@ -10,7 +10,14 @@
     ❥ Robot Framework (for sure!)
     ❥ Visual Studio Code
 
+        🌸      🌼      🌸      🌼
+    🍀   ____________________   🍀
+   🌿  [  TEST CASE: PASSED  ]   🌿
+    🍀   --------------------   🍀
+       🌼      🌸      🌼      🌸
+
 ## 🗒️ Notes from me
     I had a lot of fun to do this!
     Wishing you guys have a good day 💖
     Made by Nattaya 🍀💚✨
+
