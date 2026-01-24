@@ -5,7 +5,7 @@ This is my personal place where I'm having fun with Automate scripts!
 ### Project Gracie (SauceDemo)
 ❥ Automating the E-commerce flow of SauceDemo using **Robot Framework**
 
-*** Key Features ***
+*** Key Features *** <br>
 ❥ End to End test - start with Login > Select product > Add to card > Checkout > Price and tax validation<br>
 ❥ Language: Robot Framework<br>
 ❥ Library: Selenium, String<br>
