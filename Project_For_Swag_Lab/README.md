@@ -8,15 +8,19 @@
 
 ## 🛠️ Tools used on this project
     ❥ Robot Framework (for sure!)
-    ❥ Visual Studio Code
-<br>
-       🌸      🌼      🌸      🌼<br>
-    🍀   ____________________   🍀<br>
-   🌿  [  TEST CASE: PASSED  ]   🌿<br>
-    🍀   --------------------   🍀<br>
-       🌼      🌸      🌼      🌸
+    ❥ Visual Studio Codeฃ
 
-<br>
+
+      🌸      🌼      🌸      🌼
+
+    🍀   ____________________   🍀
+
+   🌿  [  TEST CASE: PASSED  ]   🌿
+
+    🍀   --------------------   🍀
+
+     🌼      🌸      🌼      🌸
+
 
 ## 🗒️ Notes from me
     I had a lot of fun to do this!
