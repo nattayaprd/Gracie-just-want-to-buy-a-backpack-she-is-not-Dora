@@ -9,12 +9,14 @@
 ## 🛠️ Tools used on this project
     ❥ Robot Framework (for sure!)
     ❥ Visual Studio Code
-
+<br>
         🌸      🌼      🌸      🌼
     🍀   ____________________   🍀
    🌿  [  TEST CASE: PASSED  ]   🌿
     🍀   --------------------   🍀
        🌼      🌸      🌼      🌸
+
+<br>
 
 ## 🗒️ Notes from me
     I had a lot of fun to do this!
