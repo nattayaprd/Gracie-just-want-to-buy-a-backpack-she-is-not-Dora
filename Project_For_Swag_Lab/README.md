@@ -10,12 +10,13 @@
     ❥ Robot Framework (for sure!)
     ❥ Visual Studio Code
 
-Log To Console    ${SPACE}${SPACE}${SPACE}🌸 🌸 🌸
-Log To Console    ${SPACE}${SPACE}🍀${SPACE}${SPACE}${SPACE}${SPACE}${SPACE}🍀
-Log To Console    ${SPACE}🌿 [ TEST CASE: PASSED ] 🌿
-Log To Console    ${SPACE}${SPACE}🍀${SPACE}${SPACE}${SPACE}${SPACE}${SPACE}🍀
-Log To Console    ${SPACE}${SPACE}${SPACE}🌸 🌸 🌸
-
+<p align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌸&nbsp;&nbsp;🌸&nbsp;&nbsp;🌸<br>
+&nbsp;&nbsp;&nbsp;🍀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🍀<br>
+🌿&nbsp;&nbsp;[ TEST CASE: PASSED ]&nbsp;&nbsp;🌿<br>
+&nbsp;&nbsp;&nbsp;🍀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🍀<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌸&nbsp;&nbsp;🌸&nbsp;&nbsp;🌸
+</p>
 
 ## 🗒️ Notes from me
     I had a lot of fun to do this!
