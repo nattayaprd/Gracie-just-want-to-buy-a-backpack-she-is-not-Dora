@@ -10,10 +10,10 @@
     ❥ Robot Framework (for sure!)
     ❥ Visual Studio Code
 <br>
-        🌸      🌼      🌸      🌼
-    🍀   ____________________   🍀
-   🌿  [  TEST CASE: PASSED  ]   🌿
-    🍀   --------------------   🍀
+        🌸      🌼      🌸      🌼<br>
+    🍀   ____________________   🍀<br>
+   🌿  [  TEST CASE: PASSED  ]   🌿<br>
+    🍀   --------------------   🍀<br>
        🌼      🌸      🌼      🌸
 
 <br>
