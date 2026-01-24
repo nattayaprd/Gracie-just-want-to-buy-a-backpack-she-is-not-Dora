@@ -8,9 +8,9 @@
 
 ## 🛠️ Tools used on this project
     ❥ Robot Framework (for sure!)
-    ❥ Visual Studio Codeฃ
+    ❥ Visual Studio Code
 
-
+##
       🌸      🌼      🌸      🌼
 
     🍀   ____________________   🍀
