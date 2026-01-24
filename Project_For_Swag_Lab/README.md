@@ -10,16 +10,11 @@
     ❥ Robot Framework (for sure!)
     ❥ Visual Studio Code
 
-##
-      🌸      🌼      🌸      🌼
-
-    🍀   ____________________   🍀
-
-   🌿  [  TEST CASE: PASSED  ]   🌿
-
-    🍀   --------------------   🍀
-
-     🌼      🌸      🌼      🌸
+Log To Console    ${SPACE}${SPACE}${SPACE}🌸 🌸 🌸
+Log To Console    ${SPACE}${SPACE}🍀${SPACE}${SPACE}${SPACE}${SPACE}${SPACE}🍀
+Log To Console    ${SPACE}🌿 [ TEST CASE: PASSED ] 🌿
+Log To Console    ${SPACE}${SPACE}🍀${SPACE}${SPACE}${SPACE}${SPACE}${SPACE}🍀
+Log To Console    ${SPACE}${SPACE}${SPACE}🌸 🌸 🌸
 
 
 ## 🗒️ Notes from me
